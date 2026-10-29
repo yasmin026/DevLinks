@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevLinks - Portfolio & Social Hub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Poppins', sans-serif; transition: background-color 0.3s, color 0.3s; }
+    
+    /* Tema Dark Default */
+    .theme-dark { background-color: #0b0f19; color: #f8fafc; }
+    .theme-dark .glass-card { background: rgba(30, 41, 59, 0.6); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); }
+    .theme-dark .link-btn { background: rgba(30, 41, 59, 0.8); border: 1px solid rgba(255, 255, 255, 0.1); color: #f8fafc; }
+    .theme-dark .link-btn:hover { background: rgba(51, 65, 85, 0.9); border-color: #a855f7; transform: translateY(-2px); }
+
+    /* Tema Pastel Soft */
+    .theme-pastel { background-color: #F7F5F0; color: #2B2A2A; }
+    .theme-pastel .glass-card { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(0, 0, 0, 0.08); }
+    .theme-pastel .link-btn { background: #FFFFFF; border: 1px solid rgba(0, 0, 0, 0.08); color: #2B2A2A; box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
+    .theme-pastel .link-btn:hover { border-color: #7037cd; color: #7037cd; transform: translateY(-2px); }
+
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: rgba(156, 163, 175, 0.3); border-radius: 4px; }
+  </style>
+</head>
+<body class="theme-dark min-h-screen flex flex-col items-center justify-between p-4 sm:p-6">
+
+  <!-- Switcher de Temas (Canto Superior) -->
+  <header class="w-full max-w-md flex justify-end mb-4">
+    <button id="themeToggleBtn" class="glass-card p-2.5 rounded-2xl flex items-center gap-2 text-xs font-semibold shadow-sm hover:opacity-80 transition">
+      <i id="themeIcon" class="fa-solid fa-moon text-purple-400"></i>
+      <span id="themeLabel">Dark Theme</span>
+    </button>
+  </header>
+
+  <!-- Container Principal -->
+  <main class="w-full max-w-md space-y-6 text-center">
+
+    <!-- Profile Header -->
+    <div class="space-y-3">
+      <div class="relative w-24 h-24 mx-auto">
+        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" alt="Avatar" class="w-full h-full object-cover rounded-full border-2 border-purple-500/50 p-1 shadow-xl">
+        <span class="absolute bottom-1 right-1 w-4 h-4 bg-emerald-500 border-2 border-slate-900 rounded-full" title="Disponível para projetos"></span>
+      </div>
+
+      <div>
+        <h1 class="text-xl font-bold tracking-tight">Ellen Yasmin</h1>
+        <p class="text-xs opacity-75 mt-0.5">Front-End Developer & UI/UX Specialist</p>
+      </div>
+
+      <p class="text-xs max-w-xs mx-auto opacity-80 leading-relaxed">
+        Transformando ideias em interfaces modernas, responsivas e intuitivas. 💻✨
+      </p>
+    </div>
+
+    <!-- Lista de Links -->
+    <div class="space-y-3">
+      <a href="https://github.com/yasmin026" target="_blank" class="link-btn w-full p-3.5 rounded-2xl flex items-center justify-between font-medium text-xs transition duration-300 shadow-sm group">
+        <i class="fa-brands fa-github text-base w-6"></i>
+        <span class="flex-1 text-center">Meu GitHub & Repositórios</span>
+        <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40 group-hover:opacity-100 transition"></i>
+      </a>
+
+      <a href="#" class="link-btn w-full p-3.5 rounded-2xl flex items-center justify-between font-medium text-xs transition duration-300 shadow-sm group">
+        <i class="fa-solid fa-briefcase text-base text-purple-400 w-6"></i>
+        <span class="flex-1 text-center">Portfólio Completo de Projetos</span>
+        <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40 group-hover:opacity-100 transition"></i>
+      </a>
+
+      <a href="#" class="link-btn w-full p-3.5 rounded-2xl flex items-center justify-between font-medium text-xs transition duration-300 shadow-sm group">
+        <i class="fa-brands fa-linkedin text-base text-blue-400 w-6"></i>
+        <span class="flex-1 text-center">Conectar no LinkedIn</span>
+        <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40 group-hover:opacity-100 transition"></i>
+      </a>
+
+      <button id="openContactBtn" class="link-btn w-full p-3.5 rounded-2xl flex items-center justify-between font-medium text-xs transition duration-300 shadow-sm group">
+        <i class="fa-solid fa-envelope text-base text-rose-400 w-6"></i>
+        <span class="flex-1 text-center">Enviar Mensagem / Contato</span>
+        <i class="fa-solid fa-paper-plane text-[10px] opacity-40 group-hover:opacity-100 transition"></i>
+      </button>
+    </div>
+
+    <!-- Ícones de Redes Sociais -->
+    <div class="flex items-center justify-center gap-4 pt-2">
+      <a href="#" class="p-2.5 glass-card rounded-xl text-sm hover:scale-110 transition"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#" class="p-2.5 glass-card rounded-xl text-sm hover:scale-110 transition"><i class="fa-brands fa-figma"></i></a>
+      <a href="#" class="p-2.5 glass-card rounded-xl text-sm hover:scale-110 transition"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="mt-8 text-center text-[11px] opacity-60">
+    <p>© 2026 • Desenvolvido por Ellen Yasmin</p>
+  </footer>
+
+  <!-- Modal de Contato -->
+  <div id="contactModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm hidden items-center justify-center p-4 z-50">
+    <div class="glass-card bg-slate-900 theme-dark rounded-3xl max-w-sm w-full p-6 border border-slate-700 text-left relative">
+      <button id="closeContactBtn" class="absolute right-4 top-4 text-slate-400 hover:text-white p-1"><i class="fa-solid fa-xmark text-lg"></i></button>
+
+      <h3 class="text-sm font-bold mb-1">Vamos conversar? 👋</h3>
+      <p class="text-xs opacity-75 mb-4">Envie uma mensagem rápida sobre seu projeto ou oportunidade.</p>
+
+      <form id="contactForm" class="space-y-3">
+        <div>
+          <label class="block text-[11px] font-medium mb-1">Nome</label>
+          <input type="text" required placeholder="Seu nome" class="w-full bg-slate-800/80 border border-slate-700 rounded-xl px-3 py-2 text-xs focus:outline-none focus:border-purple-500">
+        </div>
+
+        <div>
+          <label class="block text-[11px] font-medium mb-1">E-mail</label>
+          <input type="email" required placeholder="seu@email.com" class="w-full bg-slate-800/80 border border-slate-700 rounded-xl px-3 py-2 text-xs focus:outline-none focus:border-purple-500">
+        </div>
+
+        <div>
+          <label class="block text-[11px] font-medium mb-1">Mensagem</label>
+          <textarea rows="3" required placeholder="Escreva sua mensagem..." class="w-full bg-slate-800/80 border border-slate-700 rounded-xl px-3 py-2 text-xs focus:outline-none focus:border-purple-500 resize-none"></textarea>
+        </div>
+
+        <button type="submit" class="w-full py-2.5 bg-purple-600 hover:bg-purple-500 text-white rounded-xl text-xs font-bold transition">
+          Enviar Mensagem
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Theme Switcher Logic
+    const themeToggleBtn = document.getElementById('themeToggleBtn');
+    const themeIcon = document.getElementById('themeIcon');
+    const themeLabel = document.getElementById('themeLabel');
+    const body = document.body;
+
+    let isDark = true;
+
+    themeToggleBtn.addEventListener('click', () => {
+      isDark = !isDark;
+      if (isDark) {
+        body.className = 'theme-dark min-h-screen flex flex-col items-center justify-between p-4 sm:p-6';
+        themeIcon.className = 'fa-solid fa-moon text-purple-400';
+        themeLabel.textContent = 'Dark Theme';
+      } else {
+        body.className = 'theme-pastel min-h-screen flex flex-col items-center justify-between p-4 sm:p-6';
+        themeIcon.className = 'fa-solid fa-sun text-amber-500';
+        themeLabel.textContent = 'Pastel Theme';
+      }
+    });
+
+    // Modal Logic
+    const contactModal = document.getElementById('contactModal');
+    const openContactBtn = document.getElementById('openContactBtn');
+    const closeContactBtn = document.getElementById('closeContactBtn');
+    const contactForm = document.getElementById('contactForm');
+
+    openContactBtn.addEventListener('click', () => {
+      contactModal.classList.remove('hidden');
+      contactModal.classList.add('flex');
+    });
+
+    closeContactBtn.addEventListener('click', () => {
+      contactModal.classList.add('hidden');
+      contactModal.classList.remove('flex');
+    });
+
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Mensagem enviada com sucesso! Em breve entrarei em contato.');
+      contactModal.classList.add('hidden');
+      contactModal.classList.remove('flex');
+      contactForm.reset();
+    });
+  </script>
+</body>
+</html>
